@@ -2,7 +2,7 @@ from django.apps import AppConfig
 
 
 class ProfileConfig(AppConfig):
-    name = "accounts"
+    name = "profiles"
     verbose_name = 'User Profiles'
 
     def ready(self):
