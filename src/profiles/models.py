@@ -14,7 +14,7 @@ class BaseProfile(models.Model):
     bio = models.CharField(max_length=200, blank=True, null=True)
 
     def __str__(self):
-        return "{}: {}". format(self.user, (self.bio or "")[:20])
+        return "{}: {:.20}". format(self.user, self.bio or "")
 
     class Meta:
         abstract = True
