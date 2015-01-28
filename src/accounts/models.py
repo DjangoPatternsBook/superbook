@@ -9,7 +9,8 @@ class BaseProfile(models.Model):
     )
     user = models.OneToOneField(settings.AUTH_USER_MODEL,
                                 primary_key=True)
-    user_type = models.IntegerField(max_length=1, choices=USER_TYPES)
+    user_type = models.IntegerField(max_length=1, null=True,
+                                    choices=USER_TYPES)
     bio = models.CharField(max_length=200, blank=True, null=True)
 
     def __str__(self):
