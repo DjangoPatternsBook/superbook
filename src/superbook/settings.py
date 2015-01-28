@@ -50,14 +50,15 @@ INSTALLED_APPS = (
     'django_admin_bootstrapped',
     'crispy_forms',
 
+    'profiles',
+    'posts',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'profiles',
 )
 
 MIDDLEWARE_CLASSES = (
