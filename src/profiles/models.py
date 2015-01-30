@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from .services import SuperHeroWebAPI
 
 
 class BaseProfile(models.Model):
@@ -35,4 +36,6 @@ class OrdinaryProfile(models.Model):
 
 
 class Profile(SuperHeroProfile, OrdinaryProfile, BaseProfile):
-    pass
+
+    def is_superhero(self):
+        return SuperHeroWebAPI.is_hero(self.user.username)
