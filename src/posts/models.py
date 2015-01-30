@@ -39,3 +39,11 @@ class Post(Postable):
 
 class Comment(Postable):
     parent_post = models.ForeignKey(Post)
+
+
+class Like(models.Model):
+    liked_by = models.ForeignKey(settings.AUTH_USER_MODEL)
+    post = models.ForeignKey(Post)
+
+    def __str__(self):
+        return "{} liked <{}>".format(self.liked_by, self.post)
