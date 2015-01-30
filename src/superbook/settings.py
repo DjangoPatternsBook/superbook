@@ -52,6 +52,7 @@ INSTALLED_APPS = (
 
     'profiles',
     'posts',
+    'sightings',
 
     'django.contrib.admin',
     'django.contrib.auth',
