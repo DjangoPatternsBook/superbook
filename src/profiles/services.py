@@ -1,9 +1,13 @@
+API_URL = "http://api.herocheck.com/?q={0}"
+
+
 class MockWebClient:
+
+    @staticmethod
     def get(username):
         return True             # Everyone is a superhero
 
 webclient = MockWebClient()
-API_URL = "http://api.herocheck.com/?q={0}"
 
 
 class SuperHeroWebAPI:
