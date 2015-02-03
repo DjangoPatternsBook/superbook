@@ -7,6 +7,7 @@ class MockWebClient:
     def get(username):
         return True             # Everyone is a superhero
 
+
 webclient = MockWebClient()
 
 
