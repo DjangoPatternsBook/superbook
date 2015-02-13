@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from accounts.views import SignInAndSignUp, LogoutView, AboutView
 
-admin.site.site_header = "SuperBook Secret Area"
+admin.site.index_title = "SuperBook Secret Area"
 
 urlpatterns = patterns(
     '',
