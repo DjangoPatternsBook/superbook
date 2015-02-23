@@ -1,3 +1,8 @@
+# Chapter 4: Views and URLs
+
+* All of the views in this chapter are in this app:
+	- `src/chapter04`
+
 # SuperBook
 
 SuperBook is a social network for superheroes built with [Python][0] using the [Django Web Framework][1].
