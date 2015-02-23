@@ -1,0 +1,7 @@
+{% load debug %}
+
+{% for item in items %}
+    {# Some place you want to break #}
+    {% pdb %}
+    <h1>Item was: {{ item }}</h1>
+{% endfor %}

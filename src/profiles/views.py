@@ -79,3 +79,12 @@ class LogoutView(generic.RedirectView):
 
 class AboutView(generic.TemplateView):
     template_name = "about.html"
+
+
+class DebugTestView(generic.TemplateView):
+    template_name = "debugtest.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["items"] = ["Item{}".format(i) for i in range(3)]
+        return context

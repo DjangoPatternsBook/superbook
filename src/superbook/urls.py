@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from profiles.views import SignInAndSignUp, LogoutView, AboutView
+from profiles.views import SignInAndSignUp, LogoutView, AboutView, DebugTestView
+from django.views import generic
 
 urlpatterns = patterns(
     '',
@@ -12,4 +13,6 @@ urlpatterns = patterns(
         name='logout'),
 
     url(r'^admin/', include(admin.site.urls)),
+
+    url(r'^debugtest/$', DebugTestView.as_view()),
 )
