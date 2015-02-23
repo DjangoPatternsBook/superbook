@@ -8,6 +8,9 @@ from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.contrib import messages
 
+import logging
+logger = logging.getLogger(__name__)
+
 
 class SignInAndSignUp(generic.edit.FormMixin, generic.TemplateView):
 
@@ -15,6 +18,7 @@ class SignInAndSignUp(generic.edit.FormMixin, generic.TemplateView):
     signup_form_class = forms.SignupForm
 
     def get(self, request, *args, **kwargs):
+        logger.debug("Entered the complicated_view()!")
         if "signin_form" not in kwargs:
             kwargs["signin_form"] = self.signin_form_class()
         if "signup_form" not in kwargs:

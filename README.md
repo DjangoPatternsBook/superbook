@@ -2,6 +2,10 @@
 
 * Most of the testing section refers to:
 	- `src/profiles/tests.py`
+	- `src/app1/tests.py`
+* Logging example can be seen here
+	- `src/profiles/views.py` (SignInAndSignUp.get() logging line)
+	- `logs/superbook.log` (logged lines will appear when you visit home page)
 
 
 # SuperBook

@@ -116,3 +116,53 @@ MESSAGE_TAGS = {
 if DEBUG:
     INSTALLED_APPS += (
         'debug_toolbar.apps.DebugToolbarConfig',)
+
+# Log everything to the logs directory at the top
+LOGFILE_ROOT = BASE_DIR.parent / 'logs'
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            'datefmt' : "%d/%b/%Y %H:%M:%S"
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'django_log_file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': str(LOGFILE_ROOT / 'django.log'),
+            'formatter': 'verbose'
+        },
+        'proj_log_file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': str(LOGFILE_ROOT / 'superbook.log'),
+            'formatter': 'verbose'
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers':['django_log_file'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+        'superbook': {
+            'handlers': ['proj_log_file'],
+            'level': 'DEBUG',
+        },
+        'profiles.views': {
+            'handlers': ['proj_log_file'],
+            'level': 'DEBUG',
+        },
+    }
+}

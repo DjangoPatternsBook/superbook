@@ -1,6 +1,18 @@
+from unittest.mock import patch
 from django.test import TestCase
 from django.core.urlresolvers import resolve, reverse
+from django.contrib.auth.models import User
 from .views import SignInAndSignUp
+
+
+class TestSuperHeroCheck(TestCase):
+    def test_checks_superhero_service_obj(self):
+        with patch("profiles.models.SuperHeroWebAPI") as ws:
+            u = User.objects.create_user(username="t")
+            ws.is_hero.return_value = True
+            r = u.profile.is_superhero()
+        ws.is_hero.assert_called_with('t')
+        self.assertTrue(r)
 
 
 class PageOpenTestCase(TestCase):
