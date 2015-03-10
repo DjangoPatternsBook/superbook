@@ -6,8 +6,10 @@
 * Logging example can be seen here
 	- `src/profiles/views.py` (SignInAndSignUp.get() logging line)
 	- `logs/superbook.log` (logged lines will appear when you visit home page)
-
-
+* Debugging template tag can be found by visiting `/debugtest/` in your browser. Code is located in:
+	- `src/profiles/templatetags/debug.py`
+	- `src/templates/debugtest.html`
+	
 # SuperBook
 
 SuperBook is a social network for superheroes built with [Python][0] using the [Django Web Framework][1].
