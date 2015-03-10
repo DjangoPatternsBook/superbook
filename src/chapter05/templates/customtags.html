@@ -1,0 +1,18 @@
+{% extends "mybase.html" %}
+{% load nav %}
+
+{% block content %}
+
+<style type="text/css">
+.active { font-weight: bold; }
+</style>
+
+<ul class="nav nav-pills">
+  <li class={% active_nav request 'active1' %}><a href="{% url 'active1' %}">Active 1</a></li>
+  <li class={% active_nav request 'active2' %}><a href="{% url 'active2' %}">Active 2</a></li>
+  <li class={% active_nav request 'active3' %}><a href="{% url 'active3' %}">Active 3</a></li>
+</ul>
+{% endblock %}
+
+
+{% block heading %}Pattern: Active Link (Using custom tags){% endblock %}

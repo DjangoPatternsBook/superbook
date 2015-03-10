@@ -49,6 +49,7 @@ INSTALLED_APPS = (
     'django_admin_bootstrapped.bootstrap3',
     'django_admin_bootstrapped',
     'crispy_forms',
+    'chapter05',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -112,3 +113,10 @@ MESSAGE_TAGS = {
 if DEBUG:
     INSTALLED_APPS += (
         'debug_toolbar.apps.DebugToolbarConfig',)
+
+# Ensure request will be present in a request variable across the site
+from django.conf import global_settings
+TEMPLATE_CONTEXT_PROCESSORS = \
+    global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+        'django.core.context_processors.request',
+    )
