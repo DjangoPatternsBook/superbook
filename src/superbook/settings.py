@@ -49,6 +49,7 @@ INSTALLED_APPS = (
     'django_admin_bootstrapped.bootstrap3',
     'django_admin_bootstrapped',
     'crispy_forms',
+    'chapter07',
 
     'django.contrib.admin',
     'django.contrib.auth',

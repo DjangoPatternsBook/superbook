@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block container %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <h2>Form (<code>as_table</code>)</h2>
+      <form method="post">
+        {% csrf_token %}
+        <table>{{ form.as_table }}</table>
+        <input type="submit" value="Submit" />
+      </form>
+
+      <h2>Form (<code>as_p</code>)</h2>
+      <form method="post">
+        {% csrf_token %}
+        <div>{{ form.as_p }}</div>
+        <input type="submit" value="Submit" />
+      </form>
+
+      <h2>Form (<code>as_ul</code>)</h2>
+      <form method="post">
+        {% csrf_token %}
+        <ul>{{ form.as_ul }}</ul>
+        <input type="submit" value="Submit" />
+      </form>
+
+      <h2>Form (crispy forms)</h2>
+      {% crispy form %}
+
+    </div>
+  </div>
+</div>
+{% endblock container %}

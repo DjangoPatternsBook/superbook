@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block container %}
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <h2>Join the Email Newsletter</h2>
+      {% crispy subscribe_form %}
+
+      <h2>Leave the Email Newsletter</h2>
+      {% crispy unsubscribe_form %}
+
+    </div>
+  </div>
+  
+</div>
+{% endblock container %}

@@ -21,3 +21,21 @@ class PersonDetailsForm(forms.Form):
 
         self.helper = FormHelper(self)
         self.helper.layout.append(Submit('submit', 'Submit'))
+
+
+class SubscribeForm(forms.Form):
+    email = forms.EmailField()
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.layout.append(Submit('subscribe_butn', 'Subscribe'))
+
+
+class UnSubscribeForm(forms.Form):
+    email = forms.EmailField()
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.layout.append(Submit('unsubscribe_butn', 'UnSubscribe'))
