@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block container %}
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h2>{{ importantdate.desc }}</h2>
+          <p>{{ importantdate.date }}</p>
+        </div>
+      </div>
+
+      <hr/>
+      <p class="pull-right">
+        <a href="{% url 'impdate_list' %}" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Back to list</a>
+        <a href="{% url 'impdate_update' pk=importantdate.pk %}" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+        <a href="{% url 'impdate_delete' pk=importantdate.pk %}" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+      </p>
+
+      <p></p>
+    </div>
+  </div>
+</div>
+{% endblock container %}

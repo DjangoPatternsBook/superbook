@@ -4,6 +4,8 @@ from django.core.urlresolvers import reverse_lazy
 from braces.views import StaticContextMixin
 from .forms import PersonDetailsForm
 from .forms import SubscribeForm, UnSubscribeForm
+from .forms import ImportantDateForm
+from . import models
 
 
 class FormView(StaticContextMixin, generic.TemplateView):
@@ -73,3 +75,29 @@ class NewsletterView(generic.TemplateView):
             print("Unsubscribed from {}".format(form.cleaned_data["email"]))
             return redirect("home")
         return super().get(request)
+
+
+# Pattern: CRUD Views
+
+class ImpDateDetail(generic.DetailView):
+    model = models.ImportantDate
+
+
+class ImpDateCreate(generic.CreateView):
+    model = models.ImportantDate
+    form_class = ImportantDateForm
+
+
+class ImpDateUpdate(generic.UpdateView):
+    model = models.ImportantDate
+    form_class = ImportantDateForm
+
+
+class ImpDateDelete(generic.DeleteView):
+    model = models.ImportantDate
+    success_url = reverse_lazy("impdate_list")
+
+
+# Non-CRUD
+class ImpDateList(generic.ListView):
+    model = models.ImportantDate

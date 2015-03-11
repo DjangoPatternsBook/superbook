@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block container %}
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-danger" role="alert">You are about to delete this important date... It cannot be undone!</div>
+
+      <h2>{{ importantdate.desc }}</h2>
+      <p>{{ importantdate.date }}</p>
+      <form method="post">
+        {% csrf_token %}
+        <input type="submit" name="delete" value="Confirm Deletion" class="btn btn-danger"/>
+      </form>
+
+    </div>
+  </div>
+</div>
+{% endblock container %}

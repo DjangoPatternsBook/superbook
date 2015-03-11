@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block container %}
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Important Dates</h1>
+      <div class="list-group">
+      {% for date in importantdate_list %}
+        <a href="{% url 'impdate_detail' pk=date.pk%}" class="list-group-item">{{ date.date}} - {{ date.desc }}</a>
+      {% empty %}
+        <p>None found!</p>
+      {% endfor %}
+      </div>
+      <a href="{% url 'impdate_create' %}" class="btn btn-primary">Create New</a>
+    </div>
+  </div>
+  
+</div>
+{% endblock container %}

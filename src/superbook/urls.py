@@ -30,5 +30,26 @@ urlpatterns = patterns(
         views.NewsletterView.as_view(),
         name="newsletter-form"),
 
+
+    url(r'^impdates/(?P<pk>\d+)/$',
+        views.ImpDateDetail.as_view(),
+        name="impdate_detail"),
+
+    url(r'^impdates/create/$',
+        views.ImpDateCreate.as_view(),
+        name="impdate_create"),
+
+    url(r'^impdates/(?P<pk>\d+)/edit/$',
+        views.ImpDateUpdate.as_view(),
+        name="impdate_update"),
+
+    url(r'^impdates/(?P<pk>\d+)/delete/$',
+        views.ImpDateDelete.as_view(),
+        name="impdate_delete"),
+
+    url(r'^impdates/$',
+        views.ImpDateList.as_view(),
+        name="impdate_list"),
+
     url(r'^admin/', include(admin.site.urls)),
 )

@@ -1,6 +1,7 @@
 from django import forms
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
+from . import models
 
 
 class PersonDetailsForm(forms.Form):
@@ -39,3 +40,15 @@ class UnSubscribeForm(forms.Form):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
         self.helper.layout.append(Submit('unsubscribe_butn', 'UnSubscribe'))
+
+
+class ImportantDateForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.helper = FormHelper(self)
+        self.helper.layout.append(Submit('save', 'Save'))
+
+    class Meta:
+        model = models.ImportantDate
+        fields = ["date", "desc"]
