@@ -4,11 +4,13 @@ SuperBook is a social network for superheroes built with [Python][0] using the [
 
 ## Chapters
 
-These are the chapters containing Django code samples:
+These are the chapters containing Django code samples from the book 'Django Design Patterns and Best Practices' by Arun Ravindran:
 
 *  [Chapter 3](https://github.com/DjangoPatternsBook/superbook/tree/chapter03)
 *  [Chapter 4](https://github.com/DjangoPatternsBook/superbook/tree/chapter04)
+*  [Chapter 5](https://github.com/DjangoPatternsBook/superbook/tree/chapter05)
 *  [Chapter 6](https://github.com/DjangoPatternsBook/superbook/tree/chapter06)
+*  [Chapter 7](https://github.com/DjangoPatternsBook/superbook/tree/chapter07)
 *  [Chapter 9](https://github.com/DjangoPatternsBook/superbook/tree/chapter09)
 
 # Installation
