@@ -14,7 +14,6 @@ class DjTemplatesVsPythonInterp(TestCase):
         self.assertEqual(dj, expected)
 
 
-import unittest
 import doctest
 from . import mydoctests
 
