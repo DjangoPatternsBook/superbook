@@ -24,22 +24,33 @@ class PersonDetailsForm(forms.Form):
         self.helper.layout.append(Submit('submit', 'Submit'))
 
 
-class SubscribeForm(forms.Form):
+class NewsLetterForm(forms.Form):
     email = forms.EmailField()
 
     def __init__(self, *args, **kwargs):
+        submit_btn_name = kwargs.pop('submit_btn_name', 'subscribe_butn')
+        submit_btn_value = kwargs.pop('submit_btn_value', 'Subscribe')
+
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
-        self.helper.layout.append(Submit('subscribe_butn', 'Subscribe'))
+        self.helper.layout.append(Submit(name=submit_btn_name,
+                                         value=submit_btn_value))
 
 
-class UnSubscribeForm(forms.Form):
-    email = forms.EmailField()
+class SubscribeForm(NewsLetterForm):
 
     def __init__(self, *args, **kwargs):
+        kwargs['submit_btn_name'] = 'subscribe_butn'
+        kwargs['submit_btn_value'] = 'Subscribe'
         super().__init__(*args, **kwargs)
-        self.helper = FormHelper(self)
-        self.helper.layout.append(Submit('unsubscribe_butn', 'UnSubscribe'))
+
+
+class UnSubscribeForm(NewsLetterForm):
+
+    def __init__(self, *args, **kwargs):
+        kwargs['submit_btn_name'] = 'unsubscribe_butn'
+        kwargs['submit_btn_value'] = 'UnSubscribe'
+        super().__init__(*args, **kwargs)
 
 
 class ImportantDateForm(forms.ModelForm):
