@@ -108,15 +108,17 @@ Make sure that `git` is installed before running the next command. Clone the exa
 
 If pip installation fails, especially if you are on Windows, then try forcing the installation of wheels:
 
-	$ pip install --use-wheel -r requirements.txt 
+	$ pip install --use-wheel -r requirements.txt
 
 Each chapter is a seperate git branch with the naming convention `chapternn`; for e.g. `chapter04`. Once you checkout the chapter don't forget to read the README.md file (which changes) and run the migrate command if applicable:
 
 	$ git checkout chapter04
 	$ python manage.py migrate
 
+Finally create `logs` directory/folder in the project root, then create file `django.log`.
+
 ## Finished Site
-	
+
 If you would like to have a look at the finished SuperBook website, just run migrate and start the test server:
 
 	$ git checkout final
