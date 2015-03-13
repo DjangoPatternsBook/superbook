@@ -62,7 +62,7 @@ class NewsletterView(generic.TemplateView):
             form = self.subcribe_form_class(**form_args)
             if not form.is_valid():
                 return self.get(request,
-                                   subscribe_form=form)
+                                subscribe_form=form)
             # Use the form.cleaned_data["email"]
             print("Subscribed to {}".format(form.cleaned_data["email"]))
             return redirect("home")
@@ -70,7 +70,7 @@ class NewsletterView(generic.TemplateView):
             form = self.unsubcribe_form_class(**form_args)
             if not form.is_valid():
                 return self.get(request,
-                                   unsubscribe_form=form)
+                                unsubscribe_form=form)
             # Use the form.cleaned_data["email"]
             print("Unsubscribed from {}".format(form.cleaned_data["email"]))
             return redirect("home")
