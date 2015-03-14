@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.views.generic import View
 from django.core.urlresolvers import reverse_lazy
 from django.core.exceptions import PermissionDenied
+from braces.views import JSONResponseMixin
 from posts import models
 
 
@@ -53,9 +54,9 @@ class MyFeed(LoginRequiredMixin, FeedMixin, generic.CreateView):
     success_url = reverse_lazy("my_feed")
 
 
-# from braces.views import StaticContextMixin
+class PublicPostJSONView(JSONResponseMixin, generic.View):
 
-
-# class CtxView(StaticContextMixin, generic.TemplateView):
-#     template_name = "ctx.html"
-#     static_context = {"latest_profile": Profile.objects.latest('pk')}
+    def get(self, request, *args, **kwargs):
+        msgs = models.Post.objects.public_posts().values(
+            "posted_by_id", "message")[:5]
+        return self.render_json_response(list(msgs))
