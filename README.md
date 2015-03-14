@@ -2,43 +2,10 @@
 
 * All of the views in this chapter are in this app:
 	- `src/chapter04`
-
-# SuperBook
-
-SuperBook is a social network for superheroes built with [Python][0] using the [Django Web Framework][1].
-
-This project has the following basic apps:
-
-* App1 (short desc)
-* App2 (short desc)
-* App3 (short desc)
-
-## Installation
-
-### Quick start
-
-To set up a development environment quickly, first install Python 3.4. It
-comes with virtualenv built-in. So create a virtual env by:
-
-    $ python3.4 -m venv superbook
-    $ . superbook/bin/activate
-
-> Sometimes, binaries like pip get installed inside `local/bin/`. So append
-> this line to `superbook/bin/activate`:
->
-> `PATH="$VIRTUAL_ENV/local/bin:$PATH"`
-
-Now the pip commands should work smoothly. Install all dependencies:
-
-    pip install -r dev-requirements.txt
-
-Run migrations:
-
-    python manage.py migrate
-
-### Detailed instructions
-
-Take a look at the docs for a detailed instructions guide.
-
-[0]: https://www.python.org/
-[1]: https://www.djangoproject.com/
+* Don't forget to run the migrate command
+* To view the rendered views, run the test server and visit <http://localhost:8000/hello-fn/> to see the "Hello World!" message to see the first output mentioned in the chapter.
+* Visit <http://localhost:8000/hello-fn/> and add your name to the end of the URL.
+* Visit <http://localhost:8000/hello-cl/> to see the Class-based view version and add your name as before.
+* Visit <http://localhost:8000/hello-su/> to see the supervillian version and add your name as before.
+* 'Pattern: Access Controlled Views' is implemented and can be seen at <http://localhost:8000/myfeed/>
+* 'Pattern: Context Enhancers' is implemented at `src/chapter04/views.py`
