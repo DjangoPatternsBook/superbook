@@ -26,4 +26,5 @@ urlpatterns = patterns(
     url(r'^hello-su/$', views.SuperVillainView.as_view()),
 
     url(r'^myfeed/$', views.MyFeed.as_view()),
+    url(r'^public/$', views.PublicPostJSONView.as_view())
 )

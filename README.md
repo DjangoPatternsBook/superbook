@@ -9,3 +9,4 @@
 * Visit <http://localhost:8000/hello-su/> to see the supervillian version and add your name as before.
 * 'Pattern: Access Controlled Views' is implemented and can be seen at <http://localhost:8000/myfeed/>
 * 'Pattern: Context Enhancers' is implemented at `src/chapter04/views.py`
+* 'Pattern: Services' is implemented at `src/chapter04/views.py` and can be seen at <http://localhost:8000/public/>
