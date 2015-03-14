@@ -21,6 +21,10 @@ class BaseProfile(models.Model):
 
     @property
     def get_age(self):
+        # Since birthdate can be None, can't do much
+        if not self.birthdate:
+            return None
+
         today = datetime.date.today()
         return (today.year - self.birthdate.year) - int(
             (today.month, today.day) <
