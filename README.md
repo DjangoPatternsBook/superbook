@@ -110,10 +110,19 @@ If pip installation fails, especially if you are on Windows, then try forcing th
 
 	$ pip install --use-wheel -r requirements.txt 
 
+## Running each chapter
+
 Each chapter is a seperate git branch with the naming convention `chapternn`; for e.g. `chapter04`. Once you checkout the chapter don't forget to read the README.md file (which changes) and run the migrate command if applicable:
 
 	$ git checkout chapter04
+	$ git clean -f -d
+    $ cd src
+
+Now you can read the relevant source code. Each chapter is a standalone running site. So to run the site on the test server, run the following commands:
+
 	$ python manage.py migrate
+	$ python manage.py createsuperuser
+	$ python manage.py runserver
 
 ## Finished Site
 	
