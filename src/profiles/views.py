@@ -69,6 +69,7 @@ class SignInAndSignUp(generic.edit.FormMixin, generic.TemplateView):
 
 class LogoutView(generic.RedirectView):
     url = reverse_lazy("home")
+    permanent = True
 
     def get(self, request, *args, **kwargs):
         logout(request)
