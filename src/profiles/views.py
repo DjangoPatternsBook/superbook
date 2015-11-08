@@ -1,6 +1,5 @@
 # from django.shortcuts import render
 from django.views import generic
-from . import forms
 from django.shortcuts import redirect
 from django.core.urlresolvers import reverse_lazy
 from django.contrib.auth import authenticate
@@ -8,8 +7,11 @@ from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.contrib import messages
 
+from . import forms
+import posts.views as post_views
 
-class SignInAndSignUp(generic.edit.FormMixin, generic.TemplateView):
+
+class SignInAndSignUp(generic.edit.FormMixin, post_views.FeedMixin, generic.TemplateView):
 
     signin_form_class = forms.LoginForm
     signup_form_class = forms.SignupForm
@@ -65,7 +67,7 @@ class SignInAndSignUp(generic.edit.FormMixin, generic.TemplateView):
 
 class LogoutView(generic.RedirectView):
     url = reverse_lazy("home")
-    permanent = True
+    permanent = False
 
     def get(self, request, *args, **kwargs):
         logout(request)
