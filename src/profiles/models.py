@@ -11,7 +11,7 @@ class BaseProfile(models.Model):
     )
     user = models.OneToOneField(settings.AUTH_USER_MODEL,
                                 primary_key=True)
-    user_type = models.IntegerField(max_length=1, null=True,
+    user_type = models.IntegerField(null=True,
                                     choices=USER_TYPES)
     bio = models.CharField(max_length=200, blank=True, null=True)
     birthdate = models.DateField(blank=True, null=True)
