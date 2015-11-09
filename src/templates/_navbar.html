@@ -1,2 +1,5 @@
 <li {% if active_link == "home" %}class="active"{% endif %}><a href="{% url 'home' %}">Home</a></li>
+{% if user.is_authenticated %}
+<li {% if active_link == "myfeed" %}class="active"{% endif %}><a href="{% url 'myfeed' %}">My Feed</a></li>
+{% endif %}
 <li {% if active_link == "about" %}class="active"{% endif %}><a href="{% url 'about' %}">About</a></li>

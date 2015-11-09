@@ -1,0 +1,19 @@
+{% extends "feed_base.html" %}
+
+
+{% block title %}
+{{ block.super }}My Feed
+{% endblock %}
+
+{% block left_sidebar %}
+<h2>My Feed</h2>
+<h3>{{ user.get_full_name }}</h3>
+<p>{{ user.profile.bio }}</p>
+{% endblock left_sidebar %}
+
+
+{% block middle_posts %}
+{% for post in feed %}
+  {% include "_post_panel.html" with post=post %}
+{% endfor %}
+{% endblock middle_posts %}

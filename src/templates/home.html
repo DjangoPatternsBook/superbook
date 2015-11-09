@@ -79,27 +79,15 @@
       </div>
     </div>
     {% else %}
-    <div class="headbox">
-    </div>
     <div class="container">
-      <div class="row">
-        <div class="col-md-2">
-          {% block left_sidebar %}
-          <h2>My Feed</h2>
-          <h3>{{ user.get_full_name }}</h3>
-          <p>{{ user.profile.bio }}</p>
-          {% endblock left_sidebar %}
-        </div>
-        <div class="col-md-8">
-        {% block middle_posts %}
-          {% for post in feed %}
-            {% include "_post_panel.html" with post=post %}
-          {% endfor %}
-        {% endblock middle_posts %}
-        </div>
-        <div class="col-md-2">
-        </div>
+
+      <div class="starter-template">
+        <h1>Welcome {{ user.get_full_name|default:user.username }}!</h1>
+        <p class="lead">Want to know the latest? Check <a href="{% url 'myfeed' %}">your feeds</a>.</p>
       </div>
+
+    </div><!-- /.container -->
+
     {% endif %}
 
 {% endblock container %}

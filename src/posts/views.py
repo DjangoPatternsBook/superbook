@@ -1,3 +1,4 @@
+from django.views import generic
 from . import models
 
 
@@ -9,3 +10,7 @@ class FeedMixin(object):
             context["feed"] = models.Post.objects.viewable_posts(
                 self.request.user)
         return context
+
+
+class MyFeedView(FeedMixin, generic.TemplateView):
+    template_name = "my_feed.html"
