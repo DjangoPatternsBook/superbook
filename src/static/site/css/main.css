@@ -60,6 +60,10 @@ body {
     margin-top: 100px;
 }
 
+.headbox {
+    margin-bottom: 30px;
+}
+
 .footer a:hover {
     text-decoration: none;
 }

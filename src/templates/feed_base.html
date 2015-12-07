@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="myfeed" %}
+{% endblock %}
+
+
+{% block navbar-right %}
+  {{ block.super }}
+{% endblock %}
+
+
+{% block container %}
+<div class="headbox">
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      {% block left_sidebar %}
+      {% endblock left_sidebar %}
+    </div>
+    <div class="col-md-8">
+      {% block middle_posts %}
+      {% endblock middle_posts %}
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>
+{% endblock container %}

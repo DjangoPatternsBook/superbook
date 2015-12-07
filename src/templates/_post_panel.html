@@ -1,0 +1,33 @@
+{% load staticfiles %}
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-1">
+                  <img src="{% static 'site/img/default_profile.png' %}" alt="profilepic" class="img-circle" style="width: 50px; height: 50px;"/>
+                </div>
+                <div class="col-md-11" style="padding-left:2em; font-size:16px;">
+                  {{ post.message|linebreaks }}
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer" style="color: #aaa">
+              <div class="row">
+                <div class="col-md-2">
+                  <button type="button" class="btn btn-default btn-xs">
+                    <span class="glyphicon glyphicon-star"></span> 7
+                  </button>
+                </div>
+                <div class="col-md-10 text-right">
+                  <p>
+                    {% if post.privacy == "Individual" %}
+                      Private message to <a href="#">{{ post.recipient }}</a> from <a href="#">{{ post.posted_by}}</a> |
+                    {% else %}
+                    <a href="#">{{ post.posted_by}}</a> |
+                    {% endif %}
+                    <a href="#">Comment</a> |
+                    {{ post.created|timesince }} ago
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>

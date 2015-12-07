@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from accounts.views import SignInAndSignUp, LogoutView, AboutView
+from profiles.views import SignInAndSignUp, LogoutView, AboutView
+from posts.views import MyFeedView
 
 urlpatterns = patterns(
     '',
@@ -8,6 +9,8 @@ urlpatterns = patterns(
         name='home'),
     url(r'^about/$', AboutView.as_view(),
         name='about'),
+    url(r'^myfeed/$', MyFeedView.as_view(),
+        name='myfeed'),
     url(r'^accounts/logout$', LogoutView.as_view(),
         name='logout'),
 
