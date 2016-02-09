@@ -100,6 +100,8 @@ Upgrade your version of pip:
 
 	$ pip install -U pip
 
+**Note**: If `pip` command fails, then you may have to run `python -m ensurepip`
+
 Make sure that `git` is installed before running the next command. Clone the example project from github and install the dependencies.
 
 	$ git clone https://github.com/DjangoPatternsBook/superbook.git
