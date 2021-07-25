@@ -1,3 +1,6 @@
+| :exclamation:  This is the code for the first edition of the book. The second edition code is in [this repo](https://github.com/DjangoPatternsBook/superbook2).   |
+|-----------------------------------------|
+
 # SuperBook
 
 SuperBook is a social network for superheroes built with [Python][0] using the [Django Web Framework][1].
