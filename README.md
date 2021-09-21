@@ -113,7 +113,7 @@ Make sure that `git` is installed before running the next command. Clone the exa
 
 If pip installation fails, especially if you are on Windows, then try forcing the installation of wheels:
 
-	$ pip install --use-wheel -r requirements.txt 
+	$ pip install --use-wheel -r requirements.txt
 
 ## Running each chapter
 
@@ -129,8 +129,10 @@ Now you can read the relevant source code. Each chapter is a standalone running 
 	$ python manage.py createsuperuser
 	$ python manage.py runserver
 
+Finally create `logs` directory/folder in the project root, then create file `django.log`.
+
 ## Finished Site
-	
+
 If you would like to have a look at the finished SuperBook website, just run migrate and start the test server:
 
 	$ git checkout final
